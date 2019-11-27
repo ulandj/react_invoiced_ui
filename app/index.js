@@ -1,10 +1,11 @@
-import './style.css';
-
+import 'purecss/build/pure.css';
 
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 
-
-import HelloWorld from './components';
-
-render(<HelloWorld />, document.getElementById('app'));
+ReactDOM.render(
+  <Router routes={routes} history={browserHistory} />,
+  document.getElementById('app')
+);
