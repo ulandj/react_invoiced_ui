@@ -10,6 +10,9 @@
     "node": true,
     "browser": true
   },
+  "settings": {
+    "import/resolver": "webpack"
+  },
   "plugins": [
     "babel",
     "react"
