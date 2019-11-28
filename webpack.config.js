@@ -7,6 +7,9 @@ module.exports = {
     filename: '[name].js',
     chunkFileName: '[id].js',
   },
+  resolve: {
+    modulesDirectories: ['node_modules', 'lib', 'app', 'vendor'],
+  },
   module: {
     loaders: [
       {
