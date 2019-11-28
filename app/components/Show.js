@@ -1,11 +1,11 @@
 import React from 'react';
-import data from './data';
+import { observer } from 'mobx-react';
 
+@observer(['contacts'])
 class Show extends React.Component {
   componentWillMount() {
-    this.setState({
-      contact: data.filter(c => c.id === parseInt(this.props.params.contactId, 10))[0],
-    });
+    const contact = this.props.contacts.find(this.props.params.contactId);
+    this.setState({ contact });
   }
 
   render() {
