@@ -10,7 +10,7 @@ import routes from './routes';
 import stores from './stores';
 
 ReactDOM.render(
-  <Provider contacts={stores.contacts}>
+  <Provider {...stores}>
     <Router routes={routes} history={browserHistory} />
   </Provider>,
   document.getElementById('app')
