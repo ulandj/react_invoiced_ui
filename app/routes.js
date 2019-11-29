@@ -3,11 +3,14 @@ import { Route, Redirect, IndexRoute } from 'react-router';
 import c from './components';
 
 const routes =
-  <Route>
+  <Route component={c.Layout}>
     <Redirect from='/' to='/contacts' />
-    <Route path='/contacts' component={c.Layout}>
-      <IndexRoute component={c.Collection} />
-      <Route path=':contactId' component={c.Show} />
+    <Route path='users'>
+      <Route path='sign_in' component={c.Sessions.New} />
+    </Route>
+    <Route path='/contacts'>
+      <IndexRoute component={c.Contacts.Collection} />
+      <Route path=':contactId' component={c.Contacts.Show} />
     </Route>
   </Route>;
 

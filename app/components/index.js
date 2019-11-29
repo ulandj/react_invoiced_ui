@@ -1,9 +1,5 @@
-import Collection from './Collection';
 import Layout from './Layout';
-import Show from './Show';
+import Contacts from './Contacts';
+import Sessions from './Sessions';
 
-export default {
-  Layout,
-  Collection,
-  Show,
-};
+export default { Layout, Contacts, Sessions };
