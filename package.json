@@ -27,7 +27,7 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.0",
     "eslint-plugin-react": "^6.2.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "^0.9.0",
     "image-webpack-loader": "^2.0.0",
     "node-sass": "^4.13.0",
@@ -36,9 +36,9 @@
     "sass-loader": "4.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
+    "webpack": "2.2.1",
     "webpack-dashboard": "^0.1.8",
-    "webpack-dev-server": "^1.15.0"
+    "webpack-dev-server": "2.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.6",
