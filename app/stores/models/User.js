@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import Api from 'helpers/api';
 
 class User {
+  sessions = '/sessions';
   @observable isLoading = false;
   @observable signedIn = false;
   @observable email = null;
@@ -26,23 +27,30 @@ class User {
     };
 
     if (store.authentication_token && store.email) {
-      this.signInFromStorage();
+      this.signInFromStorage(store.email);
     } else if (email && password) {
       this.createSession(email, password);
     }
   }
 
-  @action signInFromStorage() {
-    this.email = localStorage.getItem('email');
-    this.signedIn = true;
-    this.isLoading = false;
+  @action async signInFromStorage(email) {
+    const response = await Api.get(this.sessions);
+    const status = response.status;
+
+    if (status === 200) {
+      this.email = email;
+      this.signedIn = true;
+      this.isLoading = false;
+    } else {
+      this.signOut();
+    }
   }
 
   async createSession(email, password) {
     this.setIsLoading(true);
 
     const response = await Api.post(
-      '/sessions',
+      this.sessions,
       { email, password }
     );
 
@@ -63,6 +71,17 @@ class User {
       console.log('error');
     }
   }
+
+  @action signOut() {
+    localStorage.removeItem('email');
+    localStorage.removeItem('token');
+
+    this.email = null;
+    this.signedIn = false;
+    this.isLoading = false;
+    browserHistory.push('/users/sign_in');
+  }
 }
+
 
 export default new User();
