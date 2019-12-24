@@ -1,4 +1,5 @@
 import 'purecss/build/pure.css';
+import 'styles/colors.sass';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

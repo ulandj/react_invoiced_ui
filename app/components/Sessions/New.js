@@ -19,7 +19,10 @@ class New extends React.Component {
   render() {
     return (
       <div className={styles.signInWrapper}>
-        <div>
+        <div className={styles.title}>
+          <h1>Invoiced</h1>
+        </div>
+        <div className={styles.formWrapper}>
           <form className='pure-form pure-form-stacked' onSubmit={this.submitForm}>
             <label>Email</label>
             <input type='email' ref={node => { this.email = node; }}

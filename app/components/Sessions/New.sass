@@ -1,4 +1,10 @@
 @import 'flat-ui/colors'
+@import 'styles/colors'
+
+=fixed_width_and_center($width)
+  width: $width
+  margin-left: auto
+  margin-right: auto
 
 .signInWrapper
   background: linear-gradient(to bottom, #000046, #1cb5e0)
@@ -7,20 +13,29 @@
   right: 0
   left: 0
   bottom: 0
-  > div
-    padding: 2em
-    width: 30em
-    margin-left: auto
-    margin-right: auto
-    margin-top: 15em
-    border-radius: 0.2em
-    background: white
-    box-shadow: 0em 0em 0.4em #000046
+
   form
     input
       margin-bottom: 1em !important
 
 .signInButton
-  background: $flat-green-1
+  background: $base-light-blue
   color: white
   margin-top: 1em
+
+.formWrapper
+  +fixed_width_and_center(25em)
+  padding: 2em
+  margin-top: 5em
+  border-radius: 0.2em
+  background: white
+  box-shadow: 0em 0em 0.4em #000046
+
+.title
+  +fixed_width_and_center(25em)
+  text-align: center
+  color: white
+  margin-top: 10em
+  h1
+    font-weight: 100
+    text-shadow: 2px 2px 0em #000046
