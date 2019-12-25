@@ -1,11 +1,22 @@
 import React from 'react';
-import Page from 'components/Page';
+import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router';
-import buttons from '../../styles/buttons.sass';
 
+import buttons from '../../styles/buttons.sass';
+import Page from 'components/Page';
+
+@inject('user') @observer
 class New extends React.PureComponent {
   submitForm = (e) => {
     e.preventDefault();
+
+    const { user } = this.props;
+
+    user.create(
+      this.email.value,
+      this.password.value,
+      this.password_confirm.value
+    );
   };
 
   render() {
@@ -22,7 +33,7 @@ class New extends React.PureComponent {
                  placeholder='Password' className='pure-input-1' placeholder='Password' />
           <input type='password' ref={node => { this.password_confirm = node; }}
                  placeholder='Password' className='pure-input-1' placeholder='Password Confirmation' />
-          <button className={`pure-button pure-input-1 ${buttons.base}`}>Sign In</button>
+          <button className={`pure-button pure-input-1 ${buttons.base}`}>Sign Up</button>
         </form>
       </Page.Auth>
     );
