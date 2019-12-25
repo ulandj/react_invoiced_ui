@@ -1,4 +1,3 @@
-@import 'flat-ui/colors'
 @import 'styles/colors'
 
 =fixed_width_and_center($width)
@@ -6,7 +5,7 @@
   margin-left: auto
   margin-right: auto
 
-.signInWrapper
+.authPageWrapper
   background: linear-gradient(to bottom, #000046, #1cb5e0)
   position: absolute
   top: 0
@@ -17,11 +16,6 @@
   form
     input
       margin-bottom: 1em !important
-
-.signInButton
-  background: $base-light-blue
-  color: white
-  margin-top: 1em
 
 .formWrapper
   +fixed_width_and_center(25em)
@@ -39,3 +33,10 @@
   h1
     font-weight: 100
     text-shadow: 2px 2px 0em #000046
+
+.extras
+  +fixed_width_and_center(25em)
+  text-align: center
+  margin-top: 3em
+  a
+    color: white

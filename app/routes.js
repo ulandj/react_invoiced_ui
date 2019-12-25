@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect, IndexRoute } from 'react-router';
-import c from './components';
+import c from './pages';
 
 const routes =
   <Route>
