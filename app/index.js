@@ -11,6 +11,7 @@ import { Provider } from 'mobx-react';
 
 import routes from './routes';
 import stores from './stores';
+import settings from './settings';
 
 const endpoint = api({
   endpoint: 'http://localhost:3000/',
@@ -25,7 +26,7 @@ const models = {
 };
 
 ReactDOM.render(
-  <Provider {...stores} {...models}>
+  <Provider {...stores} {...models} settings={settings}>
     <Router routes={routes} history={browserHistory} />
   </Provider>,
   document.getElementById('app')

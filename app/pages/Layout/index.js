@@ -5,15 +5,23 @@ import { Link } from 'react-router';
 import classNames from 'classnames';
 import styles from './index.sass';
 
+import Modal from 'components/Modal';
+
 import Member from './Member';
 import Guest from './Guest';
 
 
-@inject('user') @observer
+@inject('user', 'settings') @observer
 class Application extends React.Component {
   componentWillMount() {
     this.props.user.signIn();
   }
+
+  setModal = (node) => {
+    const { settings } = this.props;
+
+    settings.layout.modal = node;
+  };
 
   guestOrMember() {
     const { user } = this.props;
@@ -38,6 +46,7 @@ class Application extends React.Component {
           </div>
         </div>
         {this.props.children}
+        <Modal ref={this.setModal} />
       </div>
     );
   }

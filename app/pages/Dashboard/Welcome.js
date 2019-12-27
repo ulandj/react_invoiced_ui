@@ -1,17 +1,23 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 
 import buttons from 'styles/buttons.sass';
 import styles from './Welcome.sass';
 
 import cashRegister from './create-account.svg';
 
-import Modal from './Modal';
+const Example = props =>
+  <p>{props.hello} inserted Content!</p>;
 
+@inject('settings') @observer
 class Welcome extends React.PureComponent {
   openModel = (e) => {
     e.preventDefault();
 
-    this.modal.open();
+    const { settings } = this.props;
+
+    settings.layout.modal.setContent(<Example hello="It's me"/>);
+    settings.layout.modal.open();
   };
 
   render() {
@@ -26,7 +32,6 @@ class Welcome extends React.PureComponent {
         <a href='#' onClick={this.openModel} className={`pure-button ${buttons.gold}`}>
           Let's Get Started!
         </a>
-        <Modal ref={(node) => { this.modal = node; }}/>
       </div>
     );
   }
