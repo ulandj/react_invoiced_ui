@@ -28,10 +28,14 @@ class Application extends React.Component {
   render() {
     return (
       <div id='Layout' className={styles.layout}>
-        <div className={classNames('pure-menu', 'pure-menu-horizontal', 'pure-menu-fixed', styles.mainNav)}>
-          <Link to='/' className={classNames('pure-menu-heading', styles.heading)}>Invoiced</Link>
+        <div className={classNames('pure-menu', 'pure-menu-horizontal', 'pure-g', styles.mainNav)}>
+          <div className='pure-u-1-3'>
+            <Link to='/' className={classNames('pure-menu-heading', styles.heading)}>Invoiced</Link>
+          </div>
 
-          {this.guestOrMember()}
+          <div className='pure-u-2-3'>
+            {this.guestOrMember()}
+          </div>
         </div>
         {this.props.children}
       </div>

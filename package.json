@@ -43,6 +43,8 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "classnames": "^2.2.6",
+    "fronto-api": "1.0.0",
+    "fronto-connect": "1.0.6",
     "mobx": "3.2.1",
     "mobx-react": "4.2.2",
     "purecss": "^1.0.1",
