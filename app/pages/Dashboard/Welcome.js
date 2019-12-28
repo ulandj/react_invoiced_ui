@@ -4,10 +4,9 @@ import { inject, observer } from 'mobx-react';
 import buttons from 'styles/buttons.sass';
 import styles from './Welcome.sass';
 
-import cashRegister from './create-account.svg';
+import Accounts from './Accounts';
 
-const Example = props =>
-  <p>{props.hello} inserted Content!</p>;
+import cashRegister from './create-account.svg';
 
 @inject('settings') @observer
 class Welcome extends React.PureComponent {
@@ -16,7 +15,7 @@ class Welcome extends React.PureComponent {
 
     const { settings } = this.props;
 
-    settings.layout.modal.setContent(<Example hello="It's me"/>);
+    settings.layout.modal.setContent(<Accounts.New />);
     settings.layout.modal.open();
   };
 

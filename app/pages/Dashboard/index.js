@@ -19,7 +19,7 @@ class Dashboard extends React.PureComponent {
     if (isLoading) return <Spinner/>;
     if (collection.length === 0) return <Welcome/>;
 
-    return <Accounts/>;
+    return <Accounts.Collection />;
   }
 
   render() {
