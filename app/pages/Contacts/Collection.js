@@ -1,9 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
 import { extendObservable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router';
 
 import Spinner from 'components/Spinner';
+import Page from 'components/Page';
 
 import stores from 'stores';
 
@@ -42,18 +44,14 @@ class Collection extends React.Component {
   };
 
   newContact = () => (
-    <div className="pure-g">
+    <div className={classNames('pure-g', styles.newContact)}>
       <div className="pure-u-12-24">
         <form className="pure-form" onSubmit={this.addContct}>
-          <fieldset>
-            <legend>New Contact</legend>
+          <input ref="email" type="email" placeholder="example@example.com" />
+          <input ref="first_name" type="text" placeholder="First Name" />
+          <input ref="last_name" type="text" placeholder="Last Name" />
 
-            <input ref="email" type="email" placeholder="example@example.com" />
-            <input ref="first_name" type="text" placeholder="First Name" />
-            <input ref="last_name" type="text" placeholder="Last Name" />
-
-            <button type="submit" className="pure-button pure-button-primary">Add</button>
-          </fieldset>
+          <button type="submit" className="pure-button pure-button-primary">Add</button>
         </form>
       </div>
     </div>
@@ -65,16 +63,14 @@ class Collection extends React.Component {
     if (isLoading) { return <Spinner/>; }
 
     return (
-      <div id="collection" className={styles.main}>
-        {this.newContact()}
-
+      <Page.Actionable title='Contacts' action={this.newContact()}>
         <div className="pure-g">
           {
             collection.slice().map((info) =>
               <Contact key={info.id} {...info} />)
           }
         </div>
-      </div>
+      </Page.Actionable>
     );
   }
 }
