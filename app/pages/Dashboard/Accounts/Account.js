@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router';
 
 import buttons from 'styles/buttons.sass';
 
 import styles from './Account.sass';
-import { Link } from 'react-router';
 
 class Account extends React.PureComponent {
   render() {
@@ -17,8 +17,8 @@ class Account extends React.PureComponent {
         </div>
         <div className={classNames('pure-u-1-2', styles.right, styles.actions)}>
           <Link to={`/accounts/${slug}/contacts`} className={classNames('pure-button', buttons.base, buttons.small)}>
-          View
-        </Link>
+            View
+          </Link>
         </div>
       </div>
     );

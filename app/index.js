@@ -26,7 +26,7 @@ const models = {
 };
 
 ReactDOM.render(
-  <Provider {...stores} {...models} settings={settings}>
+  <Provider {...stores} {...models} endpoint={endpoint} settings={settings}>
     <Router routes={routes} history={browserHistory} />
   </Provider>,
   document.getElementById('app')
