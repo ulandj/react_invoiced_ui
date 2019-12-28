@@ -9,6 +9,7 @@ import Modal from 'components/Modal';
 
 import Member from './Member';
 import Guest from './Guest';
+import Navigation from './Navigation';
 
 
 @inject('user', 'settings') @observer
@@ -37,11 +38,14 @@ class Application extends React.Component {
     return (
       <div id='Layout' className={styles.layout}>
         <div className={classNames('pure-menu', 'pure-menu-horizontal', 'pure-g', styles.mainNav)}>
-          <div className='pure-u-1-3'>
+          <div className='pure-u-2-24'>
             <Link to='/' className={classNames('pure-menu-heading', styles.heading)}>Invoiced</Link>
           </div>
 
-          <div className='pure-u-2-3'>
+          <div className='pure-u-18-24'>
+            <Navigation />
+          </div>
+          <div className={classNames('pure-u-4-24', styles.right)}>
             {this.guestOrMember()}
           </div>
         </div>
