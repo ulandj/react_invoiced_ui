@@ -3616,15 +3616,15 @@ from2@^2.1.1:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
-fronto-api@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fronto-api/-/fronto-api-1.0.0.tgz#6c1eb79eb8c1fc082b647eeb281b69937ad6bce0"
-  integrity sha1-bB63nrjB/AgrZH7rKBtpk3rWvOA=
+fronto-api@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/fronto-api/-/fronto-api-1.0.2.tgz#4dde90538b692dcacaa5f22e23cd8f1209600d9a"
+  integrity sha512-VqdBRWQV3M/mI0lO7JEVBRuoH2OhG6WCLsuu0bpDFi3VrzKLQILi4kY+GjUoX+SmnVX7y08lHPjPf2vSvgVH9g==
 
-fronto-connect@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/fronto-connect/-/fronto-connect-1.0.6.tgz#6fe50b71de8b5cf8e8f341b29d27db7836aa8818"
-  integrity sha1-b+ULcd6LXPjo80GynSfbeDaqiBg=
+fronto-connect@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/fronto-connect/-/fronto-connect-1.0.7.tgz#360ff73ff84c844b83eb04fc8fdff1986f5cd9ba"
+  integrity sha512-8g/6QyDivMplFL/9OTyEJ4jWXREjscRFsg3QbNkbQgkDSm5Ca89uDdpA2Jsp9SQXL7dV2K+xV53CC+uLuc7png==
 
 fs-constants@^1.0.0:
   version "1.0.0"

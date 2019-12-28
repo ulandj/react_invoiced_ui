@@ -32,11 +32,21 @@ class Collection extends React.Component {
   addContct = (e) => {
     e.preventDefault();
 
-    this.contacts.add({
-      first_name: this.refs.first_name.value,
-      last_name: this.refs.last_name.value,
-      email: this.refs.email.value,
-    });
+    this.contacts.create(
+      {},
+      {
+        contact: {
+          first_name: this.refs.first_name.value,
+          last_name: this.refs.last_name.value,
+          email: this.refs.email.value,
+        },
+      },
+      {
+        201: (response) => {
+          this.contacts.appendToCollection(response.data.contact);
+        },
+      }
+    );
 
     this.refs.first_name.value = null;
     this.refs.last_name.value = null;

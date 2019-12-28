@@ -3,7 +3,7 @@ import 'styles/colors.sass';
 import 'animate.css/animate.css';
 
 import React from 'react';
-import api from 'fronto-api';
+import { api } from 'fronto-api';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 
