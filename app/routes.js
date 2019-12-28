@@ -11,9 +11,11 @@ const routes =
     </Route>
     <Route component={c.Layout.Application}>
       <Route path='dashboard' component={c.Dashboard} />
-      <Route path='/contacts'>
-        <IndexRoute component={c.Contacts.Collection} />
-        <Route path=':contactId' component={c.Contacts.Show} />
+      <Route path='accounts/:accountId'>
+        <Route path='/contacts'>
+          <IndexRoute component={c.Contacts.Collection} />
+          <Route path=':contactId' component={c.Contacts.Show} />
+        </Route>
       </Route>
     </Route>
   </Route>;

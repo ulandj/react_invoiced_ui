@@ -2,6 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
 
+import Page from 'components/Page';
+import Account from './Account';
+
 import buttons from 'styles/buttons.sass';
 
 import styles from './Collection.sass'
@@ -24,23 +27,19 @@ class Collection extends React.PureComponent {
 
     if (isLoading) return null;
 
+    const action =
+      <a href='#' className={classNames('pure-button', buttons.base, buttons.action)} onClick={this.openModal}>
+        New Account
+      </a>;
+
     return (
-      <div>
-        <div className={classNames('pure-menu pure-menu-horizontal pure-g', styles.actionBar)}>
-          <div className='pure-u-1-3'>blah</div>
-          <div className='pure-u-1-3'>
-            <h1 className='title'>Accounts</h1>
-          </div>
-          <div className='pure-u-1-3'>
-            <a href='#' className={classNames('pure-button', buttons.base)} onClick={this.openModal}>
-              New Account
-            </a>
-          </div>
+      <Page.Actionable title='Dashboard' action={action}>
+        <div className={styles.content}>
+          {collection.map((acc) =>
+            <Account key={acc.id} {...acc} />
+          )}
         </div>
-        {collection.map((acc) =>
-          <div key={acc.id}>{acc.name}</div>
-        )}
-      </div>
+      </Page.Actionable>
     );
   }
 }
