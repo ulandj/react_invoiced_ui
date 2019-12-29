@@ -7,7 +7,7 @@ class Actionable extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className={classNames('pure-menu pure-menu-horizontal pure-g', styles.actionBar)}>
+        <div className={classNames('pure-menu pure-menu-horizontal pure-g animated fadeIn', styles.actionBar)}>
           <div className='pure-u-1-3'>{this.props.back || null}</div>
           <div className={classNames('pure-u-1-3', styles.center)}>
             <h1 className={styles.actionTitle}>{this.props.title || null}</h1>
