@@ -9,6 +9,8 @@ import Page from 'components/Page';
 import classNames from 'classnames';
 import buttons from 'styles/buttons.sass';
 
+import Contact from './Contact';
+
 @inject('endpoint') @observer
 class Collection extends React.PureComponent {
   constructor(props) {
@@ -39,7 +41,7 @@ class Collection extends React.PureComponent {
     return (
       <Page.Actionable title='Organizations' action={action}>
         {collection.map(org =>
-          <div key={org.id}>{org.name}</div>
+          <Contact key={org.id} {...org} params={this.props.params} />
         )}
       </Page.Actionable>
     );
